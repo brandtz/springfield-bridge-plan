@@ -18,19 +18,35 @@
 const SHEET_NAME = 'Signatures';
 
 /**
- * Handle GET requests - Returns signature count
+ * Handle GET requests - Returns signature count and public comments
  */
 function doGet(e) {
   try {
     const sheet = getOrCreateSheet();
     const count = Math.max(0, sheet.getLastRow() - 1); // Subtract header row
     
+    // Get public comments (where displayName = 'Yes' and has a comment)
+    const data = sheet.getDataRange().getValues();
+    const comments = [];
+    
+    for (let i = 1; i < data.length; i++) {
+      // Column 7 = Display Name Publicly, Column 6 = Comment
+      if (data[i][7] === 'Yes' && data[i][6] && data[i][6].toString().trim() !== '') {
+        comments.push({
+          firstName: data[i][1],
+          lastInitial: data[i][2] ? data[i][2].toString().charAt(0).toUpperCase() + '.' : '',
+          role: data[i][5] || 'Community Member',
+          comment: data[i][6]
+        });
+      }
+    }
+    
     return ContentService
-      .createTextOutput(JSON.stringify({ count: count }))
+      .createTextOutput(JSON.stringify({ count: count, comments: comments }))
       .setMimeType(ContentService.MimeType.JSON);
   } catch (error) {
     return ContentService
-      .createTextOutput(JSON.stringify({ error: error.message }))
+      .createTextOutput(JSON.stringify({ error: error.message, count: 0, comments: [] }))
       .setMimeType(ContentService.MimeType.JSON);
   }
 }

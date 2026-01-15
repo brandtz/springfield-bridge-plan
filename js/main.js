@@ -278,17 +278,17 @@ function showSuccessMessage() {
 }
 
 // =========================================
-// Signature Counter
+// Signature Counter & Community Voices
 // =========================================
 function initSignatureCounter() {
-    // Fetch the real count from Google Sheets
-    fetchSignatureCount();
+    // Fetch the real count and comments from Google Sheets
+    fetchSignatureData();
     
-    // Refresh count every 30 seconds
-    setInterval(fetchSignatureCount, 30000);
+    // Refresh every 30 seconds
+    setInterval(fetchSignatureData, 30000);
 }
 
-async function fetchSignatureCount() {
+async function fetchSignatureData() {
     try {
         const response = await fetch(CONFIG.GOOGLE_SHEETS_URL);
         const data = await response.json();
@@ -297,11 +297,71 @@ async function fetchSignatureCount() {
             state.currentSignatures = data.count;
             updateSignatureDisplay(data.count, true);
         }
+        
+        // Update community voices if comments exist
+        if (data.comments && Array.isArray(data.comments)) {
+            displayCommunityVoices(data.comments);
+        }
     } catch (error) {
-        console.log('Could not fetch signature count:', error);
+        console.log('Could not fetch signature data:', error);
         // On error, just show 0 - don't use fake data
         updateSignatureDisplay(0, false);
+        displayCommunityVoices([]);
     }
+}
+
+function displayCommunityVoices(comments) {
+    const container = document.getElementById('voices-container');
+    const note = document.getElementById('voices-note');
+    
+    if (!container) return;
+    
+    // If no comments, show empty state
+    if (!comments || comments.length === 0) {
+        container.innerHTML = `
+            <div class="voices-empty">
+                <div class="voices-empty-icon">💬</div>
+                <p>Be the first to share your voice!</p>
+                <p>Sign the petition below and share why you support the Bridge Plan.</p>
+            </div>
+        `;
+        if (note) note.style.display = 'none';
+        return;
+    }
+    
+    // Shuffle comments for variety and take up to 6
+    const shuffled = [...comments].sort(() => Math.random() - 0.5);
+    const displayComments = shuffled.slice(0, 6);
+    
+    // Generate comment cards
+    const html = displayComments.map(comment => {
+        const initial = comment.firstName ? comment.firstName.charAt(0).toUpperCase() : '?';
+        const name = `${comment.firstName || 'Anonymous'} ${comment.lastInitial || ''}`;
+        const role = comment.role || 'Community Member';
+        
+        return `
+            <div class="voice-card">
+                <p class="voice-comment">"${escapeHtml(comment.comment)}"</p>
+                <div class="voice-attribution">
+                    <div class="voice-avatar">${initial}</div>
+                    <div>
+                        <div class="voice-name">${escapeHtml(name)}</div>
+                        <div class="voice-role">${escapeHtml(role)}</div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+    
+    container.innerHTML = html;
+    if (note) note.style.display = 'block';
+}
+
+// Helper function to prevent XSS
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
 }
 
 function updateSignatureDisplay(count, animate = false) {
