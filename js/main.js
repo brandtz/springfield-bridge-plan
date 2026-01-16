@@ -284,8 +284,8 @@ function initSignatureCounter() {
     // Fetch the real count and comments from Google Sheets
     fetchSignatureData();
     
-    // Refresh every 30 seconds
-    setInterval(fetchSignatureData, 30000);
+    // Refresh every 2 minutes to allow time to read comments
+    setInterval(fetchSignatureData, 120000);
 }
 
 async function fetchSignatureData() {
@@ -329,9 +329,9 @@ function displayCommunityVoices(comments) {
         return;
     }
     
-    // Shuffle comments for variety and take up to 6
+    // Shuffle comments for variety and take up to 90
     const shuffled = [...comments].sort(() => Math.random() - 0.5);
-    const displayComments = shuffled.slice(0, 6);
+    const displayComments = shuffled.slice(0, 90);
     
     // Generate comment cards
     const html = displayComments.map(comment => {
