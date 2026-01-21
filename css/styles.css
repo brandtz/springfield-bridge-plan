@@ -145,6 +145,57 @@ ul, ol {
 }
 
 /* =========================================
+   Update Banner
+   ========================================= */
+.update-banner {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    color: var(--color-white);
+    padding: var(--space-6) 0;
+    border-bottom: 4px solid #991b1b;
+    text-align: center;
+}
+
+.update-title {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    color: var(--color-white);
+    margin-bottom: var(--space-5);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.update-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.update-content p {
+    font-size: var(--text-base);
+    line-height: 1.8;
+    margin-bottom: var(--space-4);
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.update-content p:last-child {
+    margin-bottom: 0;
+}
+
+.update-content a {
+    color: var(--color-white);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+}
+
+.update-content a:hover {
+    text-decoration-color: rgba(255, 255, 255, 0.5);
+}
+
+.update-content strong {
+    color: var(--color-white);
+}
+
+/* =========================================
    Accessibility
    ========================================= */
 .skip-link {
@@ -525,6 +576,111 @@ ul, ol {
     }
     60% {
         transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* =========================================
+   Announcement Banner
+   ========================================= */
+.announcement-banner {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-top: 4px solid #f59e0b;
+    border-bottom: 4px solid #f59e0b;
+    padding: var(--space-8) 0;
+}
+
+.announcement-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.announcement-image {
+    flex-shrink: 0;
+    max-width: 300px;
+}
+
+.announcement-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    border: 3px solid var(--color-white);
+}
+
+.announcement-text {
+    flex: 1;
+}
+
+.announcement-badge {
+    display: inline-block;
+    background: #f59e0b;
+    color: var(--color-white);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-3);
+}
+
+.announcement-title {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    color: #92400e;
+    margin-bottom: var(--space-3);
+}
+
+.announcement-details {
+    font-size: var(--text-base);
+    color: #78350f;
+    line-height: 1.6;
+    margin-bottom: var(--space-2);
+}
+
+.announcement-details a {
+    color: #92400e;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.announcement-details a:hover {
+    color: #78350f;
+}
+
+.announcement-description {
+    font-size: var(--text-sm);
+    color: #92400e;
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+}
+
+.btn-accent {
+    background: #f59e0b;
+    color: var(--color-white);
+}
+
+.btn-accent:hover {
+    background: #d97706;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+    .announcement-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .announcement-image {
+        max-width: 250px;
+    }
+    
+    .announcement-title {
+        font-size: var(--text-xl);
     }
 }
 
@@ -981,6 +1137,106 @@ ul, ol {
     color: #78350f;
     font-size: var(--text-sm);
     line-height: 1.6;
+}
+
+/* =========================================
+   Bridge Loan (TAN/TRAN) Section
+   ========================================= */
+.bridge-loan-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+}
+
+.bridge-loan-card {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-gray-100);
+    transition: all var(--transition-base);
+}
+
+.bridge-loan-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.bridge-loan-card.highlight {
+    background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-primary-100) 100%);
+    border: 2px solid var(--color-primary);
+}
+
+.bridge-loan-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-4);
+}
+
+.bridge-loan-card h3 {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-3);
+}
+
+.bridge-loan-card p {
+    font-size: var(--text-sm);
+    color: var(--color-gray-600);
+    line-height: 1.7;
+}
+
+.bridge-loan-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bridge-loan-card ul li {
+    font-size: var(--text-sm);
+    color: var(--color-gray-700);
+    padding: var(--space-2) 0;
+    padding-left: var(--space-6);
+    position: relative;
+}
+
+.bridge-loan-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-success);
+    font-weight: 700;
+}
+
+.bridge-loan-note {
+    margin-top: var(--space-8);
+    padding: var(--space-4) var(--space-5);
+    background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-gray-100) 100%);
+    border-left: 4px solid var(--color-primary);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+.bridge-loan-note p {
+    margin: 0;
+    font-size: var(--text-sm);
+    color: var(--color-gray-600);
+    line-height: 1.6;
+}
+
+.bridge-loan-benefits {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-6);
+}
+
+.bridge-loan-card.centered {
+    max-width: 500px;
+    text-align: center;
+}
+
+.bridge-loan-card.centered ul {
+    text-align: left;
+    display: inline-block;
 }
 
 /* Four Prongs Grid */
@@ -2019,6 +2275,29 @@ ul, ol {
 .share-copy {
     background: var(--color-gray-200);
     color: var(--color-gray-700);
+}
+
+/* =========================================
+   Garden Animation Section
+   ========================================= */
+.garden-section {
+    background: var(--color-white);
+    padding: var(--space-8) 0;
+    display: flex;
+    justify-content: center;
+}
+
+.garden-section .container {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+}
+
+.garden-gif {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: var(--radius-lg);
 }
 
 /* =========================================
