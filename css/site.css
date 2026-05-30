@@ -323,3 +323,53 @@
     gap: 0.75rem;
 }
 .anon-notice-icon { font-size: 1.25rem; flex-shrink: 0; }
+
+/* ── Fix: involve-grid cards — fill space, left-align ── */
+.involve-grid {
+    grid-template-columns: repeat(4, 1fr);
+    align-items: start;
+}
+.involve-card {
+    text-align: left;
+    padding: 1.5rem;
+}
+.involve-card .involve-icon {
+    text-align: left;
+}
+
+/* ── Fix: volunteer form — dark text on light inputs ── */
+.volunteer-form-block {
+    background: rgba(255,255,255,0.12);
+}
+.volunteer-form-block h3 {
+    color: var(--color-white);
+}
+.volunteer-form-block label {
+    color: var(--color-white) !important;
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    font-size: var(--text-sm);
+}
+.volunteer-form-block .form-group {
+    margin-bottom: 1.25rem;
+}
+.volunteer-form-block input,
+.volunteer-form-block select,
+.volunteer-form-block textarea {
+    background: rgba(255,255,255,0.92) !important;
+    color: var(--color-gray-800) !important;
+    border-color: rgba(255,255,255,0.4) !important;
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border-radius: var(--radius-md);
+    border: 1.5px solid rgba(255,255,255,0.4);
+    font-size: var(--text-sm);
+}
+.volunteer-form-block input::placeholder {
+    color: var(--color-gray-400) !important;
+}
+.volunteer-form-block select option {
+    background: var(--color-white);
+    color: var(--color-gray-800);
+}

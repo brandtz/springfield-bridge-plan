@@ -10,6 +10,8 @@
  * create table survey_responses (
  *   id uuid default gen_random_uuid() primary key,
  *   submitted_at timestamptz default now(),
+ *   respondent_name text,
+ *   respondent_email text unique,  -- unique constraint prevents duplicate submissions
  *   q1_role text,
  *   q2_level text,
  *   q3_tenure text,
@@ -30,6 +32,11 @@
  * alter table survey_responses enable row level security;
  * create policy "anon insert only" on survey_responses
  *   for insert to anon with check (true);
+ *
+ * -- Also add a partial index to enforce uniqueness on non-null emails:
+ * create unique index survey_responses_email_unique
+ *   on survey_responses (respondent_email)
+ *   where respondent_email is not null;
  * ------------------------------------------------
  */
 
@@ -83,6 +90,7 @@ if (surveyForm) {
         fd.forEach((val, key) => {
             // Convert numeric likert values to integers
             const intKeys = ['q5','q6','q7','q8','q10','q11','q12','q13','q14','q15','q16','q18','q19_gap_amount'];
+        // respondent_name and respondent_email pass through as text
             data[key] = intKeys.includes(key) && val !== '' ? parseInt(val) : val;
         });
 

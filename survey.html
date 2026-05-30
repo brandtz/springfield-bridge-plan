@@ -37,9 +37,9 @@
     <main id="main-content">
         <section class="page-hero">
             <div class="container">
-                <div class="page-hero-badge">🔒 100% Anonymous</div>
+                <div class="page-hero-badge">🔒 Confidential — Results Published in Aggregate</div>
                 <h1 class="page-hero-title">Springfield SD 19 Staff Survey</h1>
-                <p class="page-hero-subtitle">Help us document what's really happening in Springfield classrooms. ~10 minutes. No names collected.</p>
+                <p class="page-hero-subtitle">Help us document what's really happening in Springfield classrooms. ~10 minutes. Your identity is never published or attributed.</p>
             </div>
         </section>
 
@@ -51,7 +51,7 @@
                     <div class="anon-notice">
                         <span class="anon-notice-icon">🔒</span>
                         <div>
-                            <strong>Your identity is never collected.</strong> No names, emails, or identifying information are stored. Responses are aggregated and published publicly. Results will be presented to the Springfield SD 19 Board of Directors.
+                            <strong>Your responses are confidential.</strong> Your name and email are collected <em>solely</em> to prevent duplicate submissions — they are never published, never shared, and never attributed to your answers. All results are reported in aggregate only. Results will be presented to the Springfield SD 19 Board of Directors.
                             <strong>Share this link with colleagues — every response matters.</strong>
                         </div>
                     </div>
@@ -75,6 +75,18 @@
                             </div>
 
                             <div class="survey-question">
+                                <label class="q-label">Your Name <span class="required">*</span></label>
+                                <p class="q-hint">Used only to prevent duplicate submissions. Never published or attributed to your responses.</p>
+                                <input type="text" name="respondent_name" required placeholder="First and last name" autocomplete="name">
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Your Email Address <span class="required">*</span></label>
+                                <p class="q-hint">Used only to prevent duplicate submissions. Never published, shared, or linked to your answers.</p>
+                                <input type="email" name="respondent_email" required placeholder="you@springfield.k12.or.us" autocomplete="email">
+                            </div>
+
+                            <div class="survey-question">
                                 <label class="q-label">Q1. What is your primary role in the district?</label>
                                 <select name="q1_role" required>
                                     <option value="">Select your role</option>
@@ -83,6 +95,7 @@
                                     <option value="classified_ea">Classified — Educational Assistant</option>
                                     <option value="classified_support">Classified — Support Staff</option>
                                     <option value="licensed_admin">Licensed — Administrator</option>
+                                    <option value="former_rif">Former Staff — RIF'd / Laid Off</option>
                                     <option value="other">Other</option>
                                 </select>
                             </div>
@@ -352,7 +365,7 @@
                             </div>
 
                             <div style="margin-top:2rem; padding:1.5rem; background:var(--color-gray-50); border-radius:var(--radius-lg); font-size:var(--text-sm); color:var(--color-gray-600);">
-                                <strong>Data use notice:</strong> Your responses are anonymous and will be aggregated into composite scores (Educator Wellbeing Score, Classroom Conditions Score, etc.) that will be published publicly and presented to the Springfield SD 19 Board of Directors. No individual responses are ever attributed.
+                                <strong>Data use notice:</strong> Your name and email are stored separately and used only to prevent duplicate submissions. Your responses are confidential and will be aggregated into composite scores (Educator Wellbeing Score, Classroom Conditions Score, etc.) that will be published publicly and presented to the Springfield SD 19 Board of Directors. No individual responses are ever attributed.
                             </div>
                         </div>
 
