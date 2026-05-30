@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anonymous Springfield SD 19 Staff Survey — help document the impact of budget cuts on our schools.">
+    <title>Staff Survey | Springfield Bridge Plan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <svg class="logo-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 36h40v4H4zM8 32h4v4H8zM36 32h4v4h-4zM6 28c0-8 8-16 18-16s18 8 18 16H6z" fill="currentColor"/><path d="M12 28c0-5.5 5-10 12-10s12 4.5 12 10H12z" fill="white" opacity="0.3"/></svg>
+                <span class="logo-text">Springfield Bridge Plan</span>
+            </a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="levy.html">The Levy</a></li>
+                <li><a href="survey.html" class="nav-active">Staff Survey</a></li>
+                <li><a href="dashboard.html">Data Dashboard</a></li>
+                <li><a href="levy.html#get-involved" class="nav-cta">Get Involved</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="progress-bar"><div class="progress-fill"></div></div>
+
+    <main id="main-content">
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-badge">🔒 100% Anonymous</div>
+                <h1 class="page-hero-title">Springfield SD 19 Staff Survey</h1>
+                <p class="page-hero-subtitle">Help us document what's really happening in Springfield classrooms. ~10 minutes. No names collected.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="survey-wrapper">
+
+                    <!-- Anon notice -->
+                    <div class="anon-notice">
+                        <span class="anon-notice-icon">🔒</span>
+                        <div>
+                            <strong>Your identity is never collected.</strong> No names, emails, or identifying information are stored. Responses are aggregated and published publicly. Results will be presented to the Springfield SD 19 Board of Directors.
+                            <strong>Share this link with colleagues — every response matters.</strong>
+                        </div>
+                    </div>
+
+                    <!-- Survey progress -->
+                    <div class="survey-progress">
+                        <div class="survey-progress-bar">
+                            <div class="survey-progress-fill" id="survey-progress-fill" style="width:0%"></div>
+                        </div>
+                        <div class="survey-progress-text" id="survey-progress-text">Section 1 of 6</div>
+                    </div>
+
+                    <!-- Survey form -->
+                    <form id="survey-form" novalidate>
+
+                        <!-- SECTION 1: WHO YOU ARE -->
+                        <div class="survey-step" data-step="1">
+                            <div class="survey-section-header">
+                                <h3>Section 1: Who You Are</h3>
+                                <p>No personally identifying information is collected.</p>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q1. What is your primary role in the district?</label>
+                                <select name="q1_role" required>
+                                    <option value="">Select your role</option>
+                                    <option value="licensed_classroom">Licensed — Classroom Teacher</option>
+                                    <option value="licensed_specialist">Licensed — Specialist (counselor, SLP, etc.)</option>
+                                    <option value="classified_ea">Classified — Educational Assistant</option>
+                                    <option value="classified_support">Classified — Support Staff</option>
+                                    <option value="licensed_admin">Licensed — Administrator</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q2. What school level do you primarily work in?</label>
+                                <select name="q2_level">
+                                    <option value="">Select level</option>
+                                    <option value="elementary">Elementary</option>
+                                    <option value="middle">Middle School</option>
+                                    <option value="high">High School</option>
+                                    <option value="district">District-wide / Multiple</option>
+                                </select>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q3. How many years have you worked in Springfield SD 19?</label>
+                                <select name="q3_tenure">
+                                    <option value="">Select tenure</option>
+                                    <option value="0-2">Less than 3 years</option>
+                                    <option value="3-5">3–5 years</option>
+                                    <option value="6-10">6–10 years</option>
+                                    <option value="11-20">11–20 years</option>
+                                    <option value="20+">More than 20 years</option>
+                                </select>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q4. What is your current contract status?</label>
+                                <select name="q4_status">
+                                    <option value="">Select status</option>
+                                    <option value="full_time">Full-time</option>
+                                    <option value="part_time">Part-time</option>
+                                    <option value="temporary">Temporary / Limited</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 2: CLASSROOM CONDITIONS -->
+                        <div class="survey-step" data-step="2" hidden>
+                            <div class="survey-section-header">
+                                <h3>Section 2: Classroom Conditions</h3>
+                                <p>Rate from 1 (very poor/strongly disagree) to 5 (excellent/strongly agree).</p>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q5. How would you rate the overall condition of your classroom or work environment?</label>
+                                <div class="likert-scale">
+                                    <div class="likert-option"><input type="radio" name="q5" value="1" id="q5_1"><label for="q5_1"><span class="likert-num">1</span>Very Poor</label></div>
+                                    <div class="likert-option"><input type="radio" name="q5" value="2" id="q5_2"><label for="q5_2"><span class="likert-num">2</span>Poor</label></div>
+                                    <div class="likert-option"><input type="radio" name="q5" value="3" id="q5_3"><label for="q5_3"><span class="likert-num">3</span>Neutral</label></div>
+                                    <div class="likert-option"><input type="radio" name="q5" value="4" id="q5_4"><label for="q5_4"><span class="likert-num">4</span>Good</label></div>
+                                    <div class="likert-option"><input type="radio" name="q5" value="5" id="q5_5"><label for="q5_5"><span class="likert-num">5</span>Excellent</label></div>
+                                </div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q6. I have the instructional materials I need to do my job effectively.</label>
+                                <div class="likert-scale">
+                                    <div class="likert-option"><input type="radio" name="q6" value="1" id="q6_1"><label for="q6_1"><span class="likert-num">1</span>Strongly Disagree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q6" value="2" id="q6_2"><label for="q6_2"><span class="likert-num">2</span>Disagree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q6" value="3" id="q6_3"><label for="q6_3"><span class="likert-num">3</span>Neutral</label></div>
+                                    <div class="likert-option"><input type="radio" name="q6" value="4" id="q6_4"><label for="q6_4"><span class="likert-num">4</span>Agree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q6" value="5" id="q6_5"><label for="q6_5"><span class="likert-num">5</span>Strongly Agree</label></div>
+                                </div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q7. My class sizes allow me to give students the individual attention they need.</label>
+                                <div class="likert-scale">
+                                    <div class="likert-option"><input type="radio" name="q7" value="1" id="q7_1"><label for="q7_1"><span class="likert-num">1</span>Strongly Disagree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q7" value="2" id="q7_2"><label for="q7_2"><span class="likert-num">2</span>Disagree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q7" value="3" id="q7_3"><label for="q7_3"><span class="likert-num">3</span>Neutral</label></div>
+                                    <div class="likert-option"><input type="radio" name="q7" value="4" id="q7_4"><label for="q7_4"><span class="likert-num">4</span>Agree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q7" value="5" id="q7_5"><label for="q7_5"><span class="likert-num">5</span>Strongly Agree</label></div>
+                                </div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q8. Technology and equipment in my work area is adequate and functional.</label>
+                                <div class="likert-scale">
+                                    <div class="likert-option"><input type="radio" name="q8" value="1" id="q8_1"><label for="q8_1"><span class="likert-num">1</span>Strongly Disagree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q8" value="2" id="q8_2"><label for="q8_2"><span class="likert-num">2</span>Disagree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q8" value="3" id="q8_3"><label for="q8_3"><span class="likert-num">3</span>Neutral</label></div>
+                                    <div class="likert-option"><input type="radio" name="q8" value="4" id="q8_4"><label for="q8_4"><span class="likert-num">4</span>Agree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q8" value="5" id="q8_5"><label for="q8_5"><span class="likert-num">5</span>Strongly Agree</label></div>
+                                </div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q9. Budget cuts have required me to personally spend money on classroom supplies this year.</label>
+                                <select name="q9_oop">
+                                    <option value="">Select one</option>
+                                    <option value="no">No</option>
+                                    <option value="yes_minor">Yes — less than $100</option>
+                                    <option value="yes_moderate">Yes — $100–$299</option>
+                                    <option value="yes_significant">Yes — $300–$499</option>
+                                    <option value="yes_major">Yes — $500 or more</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 3: STUDENT SUPPORT -->
+                        <div class="survey-step" data-step="3" hidden>
+                            <div class="survey-section-header">
+                                <h3>Section 3: Student Support</h3>
+                                <p>Rate from 1 (strongly disagree) to 5 (strongly agree).</p>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q10. Students in my school have adequate access to counseling and mental health support.</label>
+                                <div class="likert-scale">
+                                    <div class="likert-option"><input type="radio" name="q10" value="1" id="q10_1"><label for="q10_1"><span class="likert-num">1</span>Strongly Disagree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q10" value="2" id="q10_2"><label for="q10_2"><span class="likert-num">2</span>Disagree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q10" value="3" id="q10_3"><label for="q10_3"><span class="likert-num">3</span>Neutral</label></div>
+                                    <div class="likert-option"><input type="radio" name="q10" value="4" id="q10_4"><label for="q10_4"><span class="likert-num">4</span>Agree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q10" value="5" id="q10_5"><label for="q10_5"><span class="likert-num">5</span>Strongly Agree</label></div>
+                                </div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q11. Students with special needs in my school receive adequate specialized support.</label>
+                                <div class="likert-scale">
+                                    <div class="likert-option"><input type="radio" name="q11" value="1" id="q11_1"><label for="q11_1"><span class="likert-num">1</span>Strongly Disagree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q11" value="2" id="q11_2"><label for="q11_2"><span class="likert-num">2</span>Disagree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q11" value="3" id="q11_3"><label for="q11_3"><span class="likert-num">3</span>Neutral</label></div>
+                                    <div class="likert-option"><input type="radio" name="q11" value="4" id="q11_4"><label for="q11_4"><span class="likert-num">4</span>Agree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q11" value="5" id="q11_5"><label for="q11_5"><span class="likert-num">5</span>Strongly Agree</label></div>
+                                </div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q12. Budget cuts have directly reduced the quality of support students in my care receive.</label>
+                                <div class="likert-scale">
+                                    <div class="likert-option"><input type="radio" name="q12" value="1" id="q12_1"><label for="q12_1"><span class="likert-num">1</span>Strongly Disagree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q12" value="2" id="q12_2"><label for="q12_2"><span class="likert-num">2</span>Disagree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q12" value="3" id="q12_3"><label for="q12_3"><span class="likert-num">3</span>Neutral</label></div>
+                                    <div class="likert-option"><input type="radio" name="q12" value="4" id="q12_4"><label for="q12_4"><span class="likert-num">4</span>Agree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q12" value="5" id="q12_5"><label for="q12_5"><span class="likert-num">5</span>Strongly Agree</label></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 4: MORALE & WELLBEING -->
+                        <div class="survey-step" data-step="4" hidden>
+                            <div class="survey-section-header">
+                                <h3>Section 4: Morale &amp; Wellbeing</h3>
+                                <p>Rate from 1 (strongly disagree / very negative) to 5 (strongly agree / very positive).</p>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q13. Overall, how would you rate your current job satisfaction?</label>
+                                <div class="likert-scale">
+                                    <div class="likert-option"><input type="radio" name="q13" value="1" id="q13_1"><label for="q13_1"><span class="likert-num">1</span>Very Low</label></div>
+                                    <div class="likert-option"><input type="radio" name="q13" value="2" id="q13_2"><label for="q13_2"><span class="likert-num">2</span>Low</label></div>
+                                    <div class="likert-option"><input type="radio" name="q13" value="3" id="q13_3"><label for="q13_3"><span class="likert-num">3</span>Neutral</label></div>
+                                    <div class="likert-option"><input type="radio" name="q13" value="4" id="q13_4"><label for="q13_4"><span class="likert-num">4</span>High</label></div>
+                                    <div class="likert-option"><input type="radio" name="q13" value="5" id="q13_5"><label for="q13_5"><span class="likert-num">5</span>Very High</label></div>
+                                </div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q14. I have seriously considered leaving Springfield SD 19 in the past 12 months.</label>
+                                <div class="likert-scale">
+                                    <div class="likert-option"><input type="radio" name="q14" value="1" id="q14_1"><label for="q14_1"><span class="likert-num">1</span>Strongly Disagree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q14" value="2" id="q14_2"><label for="q14_2"><span class="likert-num">2</span>Disagree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q14" value="3" id="q14_3"><label for="q14_3"><span class="likert-num">3</span>Neutral</label></div>
+                                    <div class="likert-option"><input type="radio" name="q14" value="4" id="q14_4"><label for="q14_4"><span class="likert-num">4</span>Agree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q14" value="5" id="q14_5"><label for="q14_5"><span class="likert-num">5</span>Strongly Agree</label></div>
+                                </div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q15. I feel valued and supported by district leadership.</label>
+                                <div class="likert-scale">
+                                    <div class="likert-option"><input type="radio" name="q15" value="1" id="q15_1"><label for="q15_1"><span class="likert-num">1</span>Strongly Disagree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q15" value="2" id="q15_2"><label for="q15_2"><span class="likert-num">2</span>Disagree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q15" value="3" id="q15_3"><label for="q15_3"><span class="likert-num">3</span>Neutral</label></div>
+                                    <div class="likert-option"><input type="radio" name="q15" value="4" id="q15_4"><label for="q15_4"><span class="likert-num">4</span>Agree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q15" value="5" id="q15_5"><label for="q15_5"><span class="likert-num">5</span>Strongly Agree</label></div>
+                                </div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q16. The recent budget cuts have negatively impacted my morale and motivation.</label>
+                                <div class="likert-scale">
+                                    <div class="likert-option"><input type="radio" name="q16" value="1" id="q16_1"><label for="q16_1"><span class="likert-num">1</span>Strongly Disagree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q16" value="2" id="q16_2"><label for="q16_2"><span class="likert-num">2</span>Disagree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q16" value="3" id="q16_3"><label for="q16_3"><span class="likert-num">3</span>Neutral</label></div>
+                                    <div class="likert-option"><input type="radio" name="q16" value="4" id="q16_4"><label for="q16_4"><span class="likert-num">4</span>Agree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q16" value="5" id="q16_5"><label for="q16_5"><span class="likert-num">5</span>Strongly Agree</label></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 5: BUDGET IMPACT -->
+                        <div class="survey-step" data-step="5" hidden>
+                            <div class="survey-section-header">
+                                <h3>Section 5: Budget Impact</h3>
+                                <p>Help us quantify the real dollar impact on your work.</p>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q17. How has the loss of staff positions affected your workload?</label>
+                                <select name="q17_workload">
+                                    <option value="">Select one</option>
+                                    <option value="no_change">No noticeable change</option>
+                                    <option value="slightly_more">Slightly more work</option>
+                                    <option value="significantly_more">Significantly more work</option>
+                                    <option value="unsustainable">My workload is unsustainable</option>
+                                </select>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q18. Programs or services my students rely on have been cut or reduced this year.</label>
+                                <div class="likert-scale">
+                                    <div class="likert-option"><input type="radio" name="q18" value="1" id="q18_1"><label for="q18_1"><span class="likert-num">1</span>Strongly Disagree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q18" value="2" id="q18_2"><label for="q18_2"><span class="likert-num">2</span>Disagree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q18" value="3" id="q18_3"><label for="q18_3"><span class="likert-num">3</span>Neutral</label></div>
+                                    <div class="likert-option"><input type="radio" name="q18" value="4" id="q18_4"><label for="q18_4"><span class="likert-num">4</span>Agree</label></div>
+                                    <div class="likert-option"><input type="radio" name="q18" value="5" id="q18_5"><label for="q18_5"><span class="likert-num">5</span>Strongly Agree</label></div>
+                                </div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q19. If you could identify ONE additional resource that would most improve your ability to serve students, what would it cost annually? <span style="font-weight:400; color:var(--color-gray-500)">(Enter 0 if none)</span></label>
+                                <div class="q-hint">Examples: an additional EA, counseling time, supplies, planning period. Your best estimate is fine.</div>
+                                <div class="calc-input-row" style="max-width:280px">
+                                    <span class="calc-prefix">$</span>
+                                    <input type="number" name="q19_gap_amount" min="0" max="500000" step="500" placeholder="e.g. 45000">
+                                </div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q20. Do you support the district placing a Local Option Levy on the November 2026 ballot?</label>
+                                <select name="q20_levy_support">
+                                    <option value="">Select one</option>
+                                    <option value="strongly_support">Yes — strongly support</option>
+                                    <option value="support">Yes — somewhat support</option>
+                                    <option value="neutral">Neutral / unsure</option>
+                                    <option value="oppose">No — somewhat oppose</option>
+                                    <option value="strongly_oppose">No — strongly oppose</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 6: OPEN RESPONSE -->
+                        <div class="survey-step" data-step="6" hidden>
+                            <div class="survey-section-header">
+                                <h3>Section 6: Your Voice</h3>
+                                <p>Optional open responses. Nothing you write here can identify you.</p>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q21. What has been the single biggest impact of budget cuts on your ability to do your job?</label>
+                                <textarea name="q21_biggest_impact" rows="4" placeholder="Describe in your own words..."></textarea>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q22. What would you most want the Springfield School Board to understand about conditions in our schools right now?</label>
+                                <textarea name="q22_board_message" rows="4" placeholder="Your message to the Board..."></textarea>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Q23. Anything else you'd like to share? <span style="font-weight:400; color:var(--color-gray-500)">(optional)</span></label>
+                                <textarea name="q23_other" rows="3" placeholder="Additional thoughts..."></textarea>
+                            </div>
+
+                            <div style="margin-top:2rem; padding:1.5rem; background:var(--color-gray-50); border-radius:var(--radius-lg); font-size:var(--text-sm); color:var(--color-gray-600);">
+                                <strong>Data use notice:</strong> Your responses are anonymous and will be aggregated into composite scores (Educator Wellbeing Score, Classroom Conditions Score, etc.) that will be published publicly and presented to the Springfield SD 19 Board of Directors. No individual responses are ever attributed.
+                            </div>
+                        </div>
+
+                        <!-- Navigation -->
+                        <div class="survey-nav">
+                            <button type="button" class="btn btn-secondary" id="survey-prev" hidden>← Previous</button>
+                            <button type="button" class="btn btn-primary" id="survey-next">Next Section →</button>
+                            <button type="submit" class="btn btn-primary" id="survey-submit" hidden>Submit Survey ✓</button>
+                        </div>
+
+                    </form>
+
+                    <!-- Success state -->
+                    <div id="survey-success" hidden style="text-align:center; padding:3rem 1rem;">
+                        <div style="font-size:4rem; margin-bottom:1rem;">🎉</div>
+                        <h2 style="font-size:var(--text-3xl); font-weight:800; color:var(--color-primary-dark); margin-bottom:1rem;">Thank You!</h2>
+                        <p style="font-size:var(--text-lg); color:var(--color-gray-600); max-width:540px; margin:0 auto 2rem;">Your response has been recorded anonymously. Results will be published on this site and presented to the Board.</p>
+                        <p style="font-weight:600; color:var(--color-gray-700); margin-bottom:1.5rem;">Please share this survey with colleagues:</p>
+                        <div style="background:var(--color-gray-100); border-radius:var(--radius-lg); padding:1rem 1.5rem; font-family:monospace; font-size:var(--text-base); margin-bottom:2rem; word-break:break-all;">springfieldbridgeplan.org/survey.html</div>
+                        <a href="index.html" class="btn btn-primary btn-large">Return Home</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg class="logo-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 36h40v4H4zM8 32h4v4H8zM36 32h4v4h-4zM6 28c0-8 8-16 18-16s18 8 18 16H6z" fill="currentColor"/></svg>
+                        <span>Springfield Bridge Plan</span>
+                    </div>
+                    <p class="footer-tagline">Building a bridge, not burning one.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="levy.html">The Levy</a>
+                    <a href="survey.html">Staff Survey</a>
+                    <a href="dashboard.html">Data Dashboard</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Springfield Bridge Plan. A community initiative.</p>
+                <p class="footer-note">Independent community campaign. Not affiliated with Springfield Public Schools.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/site.js"></script>
+    <script src="js/survey.js"></script>
+</body>
+</html>
