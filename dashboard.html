@@ -36,54 +36,71 @@
     <main id="main-content">
         <section class="page-hero">
             <div class="container">
-                <div class="page-hero-badge">📊 Coming Soon</div>
-                <h1 class="page-hero-title">Oregon Education Data Dashboard</h1>
-                <p class="page-hero-subtitle">Springfield vs. Lane County vs. All 197 Oregon Districts — transparent financial comparison.</p>
+                <div class="page-hero-badge">📊 Budget Explorer</div>
+                <h1 class="page-hero-title">School District Budget Dashboard</h1>
+                <p class="page-hero-subtitle">Where the money comes from and where it goes — filter by district, year, and school.</p>
             </div>
         </section>
-        <section class="section">
-            <div class="container" style="max-width:760px; text-align:center;">
-                <div class="coming-soon-block">
-                    <div class="coming-soon-icon">🚧</div>
-                    <h2>Under Construction</h2>
-                    <p class="body-text">The Oregon Education Data Dashboard will aggregate public ODE financial transparency data across all 197 Oregon school districts. It will show per-pupil spending, enrollment trends, fund balance trajectories, and how Springfield compares to peer districts.</p>
-                    <p class="body-text">Data sources include ODE Fiscal Transparency Excel files, ODE Fall Membership enrollment reports, and Lane County tax assessment data.</p>
-                    <div class="coming-soon-features">
-                        <div class="cs-feature">📈 Enrollment trends (5-year)</div>
-                        <div class="cs-feature">💰 Per-pupil spending comparison</div>
-                        <div class="cs-feature">🏦 Fund balance trajectories</div>
-                        <div class="cs-feature">🗺️ All 197 Oregon districts</div>
-                        <div class="cs-feature">🔍 Springfield featured case study</div>
-                        <div class="cs-feature">📥 Public data, downloadable</div>
+
+        <section class="section dash-section">
+            <div class="container">
+
+                <!-- Controls -->
+                <div class="dash-controls">
+                    <div class="dash-field">
+                        <label for="districtSelect">District</label>
+                        <select id="districtSelect"></select>
                     </div>
-                    <a href="levy.html#get-involved" class="btn btn-primary btn-large" style="margin-top:2rem; display:inline-flex;">Volunteer to Help Build This →</a>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <svg class="logo-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 36h40v4H4zM8 32h4v4H8zM36 32h4v4h-4zM6 28c0-8 8-16 18-16s18 8 18 16H6z" fill="currentColor"/></svg>
-                        <span>Springfield Bridge Plan</span>
+                    <div class="dash-field">
+                        <label for="yearSelect">Fiscal Year</label>
+                        <select id="yearSelect"></select>
                     </div>
-                    <p class="footer-tagline">Building a bridge, not burning one.</p>
+                    <div class="dash-field">
+                        <label for="schoolSelect">School</label>
+                        <select id="schoolSelect"></select>
+                    </div>
                 </div>
-                <div class="footer-links">
-                    <a href="index.html">Home</a>
-                    <a href="levy.html">The Levy</a>
-                    <a href="survey.html">Staff Survey</a>
-                    <a href="dashboard.html">Data Dashboard</a>
+
+                <p id="freshTag" class="dash-fresh"></p>
+
+                <!-- KPI tiles -->
+                <div id="kpiRow" class="kpi-row"></div>
+
+                <div id="schoolNote" class="dash-callout" style="display:none;"></div>
+
+                <!-- General Fund this year -->
+                <h2 class="dash-h2">General Fund — Selected Year</h2>
+                <div class="dash-grid-2">
+                    <div class="dash-card">
+                        <h3>Revenue by Source</h3>
+                        <div class="chart-box"><canvas id="revChart"></canvas></div>
+                    </div>
+                    <div class="dash-card">
+                        <h3>Spending by Function</h3>
+                        <div class="chart-box"><canvas id="expChart"></canvas></div>
+                    </div>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Springfield Bridge Plan. A community initiative.</p>
-                <p class="footer-note">Independent community campaign. Not affiliated with Springfield Public Schools.</p>
-            </div>
-        </div>
-    </footer>
-    <script src="js/site.js"></script>
-</body>
-</html>
+
+                <!-- Multi-year -->
+                <h2 class="dash-h2">Multi-Year Trends</h2>
+                <div class="dash-grid-2">
+                    <div class="dash-card">
+                        <h3>All Funds vs. General Fund</h3>
+                        <div class="chart-box"><canvas id="trendChart"></canvas></div>
+                    </div>
+                    <div class="dash-card">
+                        <h3>Salaries &amp; Benefits (All Funds)</h3>
+                        <div class="chart-box"><canvas id="salbenChart"></canvas></div>
+                    </div>
+                </div>
+                <div class="dash-card">
+                    <h3>Budget by Fund (All Funds)</h3>
+                    <div class="chart-box chart-box-wide"><canvas id="fundChart"></canvas></div>
+                </div>
+
+                <div id="fy2627Note" class="dash-callout dash-callout-warn"></div>
+
+                <div class="dash-sources">
+                    <h3>Data Sources</h3>
+                    <ul id="sourceList"></ul>
+                    <p class="dash-disclaimer">Figures are adopted budget appropriations as published in district budget documents (not audited actuals), shown for transparency and publi

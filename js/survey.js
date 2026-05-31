@@ -54,7 +54,7 @@ const steps       = document.querySelectorAll('.survey-step');
 const prevBtn     = document.getElementById('survey-prev');
 const nextBtn     = document.getElementById('survey-next');
 const submitBtn   = document.getElementById('survey-submit');
-const progressFill = document.getElementById('survey-progress-fill');
+const surveyProgressFill = document.getElementById('survey-progress-fill');
 const progressText = document.getElementById('survey-progress-text');
 const surveyForm   = document.getElementById('survey-form');
 const surveySuccess = document.getElementById('survey-success');
@@ -101,7 +101,7 @@ function showStep(n) {
     submitBtn.hidden = n !== TOTAL_STEPS;
 
     const pct = ((n - 1) / (TOTAL_STEPS - 1)) * 100;
-    progressFill.style.width = pct + '%';
+    surveyProgressFill?.style.width = pct + '%';
     progressText.textContent = `Section ${n} of ${TOTAL_STEPS}`;
 
     window.scrollTo({ top: document.querySelector('.survey-wrapper').offsetTop - 80, behavior: 'smooth' });
@@ -187,7 +187,7 @@ if (surveyForm) {
 function showSuccess() {
     surveyForm.hidden = true;
     surveySuccess.hidden = false;
-    progressFill.style.width = '100%';
+    surveyProgressFill?.style.width = '100%';
     progressText.textContent = 'Complete! Thank you.';
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Springfield SD 19 Family Exit Survey — confidential feedback from families who have left the district.">
+    <title>Family Exit Survey | Springfield Bridge Plan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/exit-survey.css">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <svg class="logo-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 36h40v4H4zM8 32h4v4H8zM36 32h4v4h-4zM6 28c0-8 8-16 18-16s18 8 18 16H6z" fill="currentColor"/><path d="M12 28c0-5.5 5-10 12-10s12 4.5 12 10H12z" fill="white" opacity="0.3"/></svg>
+                <span class="logo-text">Springfield Bridge Plan</span>
+            </a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="levy.html">The Levy</a></li>
+                <li><a href="survey.html">Staff Survey</a></li>
+                <li><a href="exit-survey.html" class="nav-active">Family Exit Survey</a></li>
+                <li><a href="dashboard.html">Data Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="progress-bar"><div class="progress-fill"></div></div>
+
+    <main id="main-content">
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-badge">🔒 Confidential — Results in Aggregate Only</div>
+                <h1 class="page-hero-title">Family Exit Survey</h1>
+                <p class="page-hero-subtitle">For families who have left Springfield Public Schools. Help us understand why — and what it would take to bring you back.</p>
+                <div class="page-hero-meta">~12–15 minutes &nbsp;·&nbsp; All responses confidential &nbsp;·&nbsp; Never published individually</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="survey-wrapper">
+
+                    <div class="anon-notice">
+                        <span class="anon-notice-icon">🔒</span>
+                        <div>
+                            <strong>Your responses are confidential.</strong> Your name and email are collected <em>solely</em> to prevent duplicate submissions — they are never published, shared, or attributed to your answers. All results are reported in aggregate only and will be presented to the Springfield SD 19 Board of Directors and used to inform the Springfield Bridge Plan levy campaign.
+                        </div>
+                    </div>
+
+                    <div class="survey-progress">
+                        <div class="survey-progress-bar">
+                            <div class="survey-progress-fill" id="exit-progress-fill" style="width:0%"></div>
+                        </div>
+                        <div class="survey-progress-text">
+                            <span id="exit-progress-text">Section 1 of 8</span>
+                            <span id="exit-progress-pct">0%</span>
+                        </div>
+                    </div>
+
+                    <form id="exit-survey-form" novalidate>
+
+                        <!-- ══ SECTION 1: ABOUT YOU ══════════════════════════ -->
+                        <div class="survey-step" data-step="1">
+                            <div class="survey-section-header">
+                                <h3>Section 1: About You</h3>
+                                <p>Confidential identity information — used only to prevent duplicate submissions.</p>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Your Name <span class="required">*</span></label>
+                                <p class="q-hint">Never published or attributed to your responses.</p>
+                                <input type="text" name="respondent_name" placeholder="First and last name" autocomplete="name">
+                                <span class="q-error">Please enter your name.</span>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Your Email Address <span class="required">*</span></label>
+                                <p class="q-hint">Used only to prevent duplicate submissions. Never shared.</p>
+                                <input type="email" name="respondent_email" placeholder="you@example.com" autocomplete="email">
+                                <span class="q-error">Please enter a valid email address.</span>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">ZIP Code</label>
+                                <p class="q-hint">Helps us understand where families have relocated. Optional.</p>
+                                <input type="text" name="respondent_zip" placeholder="97477" maxlength="5" style="max-width:200px">
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">What year did your family leave Springfield SD 19? <span class="required">*</span></label>
+                                <select name="year_left">
+                                    <option value="" disabled selected>Select year</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2022">2022</option>
+                                    <option value="before_2022">Before 2022</option>
+                                </select>
+                                <span class="q-error">Please select the year you left.</span>
+                            </div>
+                        </div>
+
+                        <!-- ══ SECTION 2: YOUR STUDENTS ══════════════════════ -->
+                        <div class="survey-step" data-step="2" hidden>
+                            <div class="survey-section-header">
+                                <h3>Section 2: Your Students</h3>
+                                <p>Add each child who left Springfield SD 19. Up to 5 students. Each card tracks their grade, school, and experience — including any special education needs.</p>
+                            </div>
+
+                            <div id="student-cards-container">
+                                <!-- Student cards injected by JS -->
+                            </div>
+
+                            <button type="button" id="add-student-btn" class="btn-add-student">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+                                Add Another Student
+                            </button>
+                            <p class="add-student-note" id="student-limit-note" hidden>Maximum of 5 students reached.</p>
+                        </div>
+
+                        <!-- ══ SECTION 3: DISTRICT EXPERIENCE ════════════════ -->
+                        <div class="survey-step" data-step="3" hidden>
+                            <div class="survey-section-header">
+                                <h3>Section 3: District-Wide Experience</h3>
+                                <p>Rate your family's overall experience with district-level staff and systems. Per-student teacher and aide ratings were collected in Section 2.</p>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">School administration (principal / vice principal)</label>
+                                <div class="likert-scale" data-name="rating_school_admin">
+                                    <div class="likert-option"><input type="radio" name="rating_school_admin" value="1" id="rsa1"><label for="rsa1"><span class="likert-num">1</span>Very Poor</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_school_admin" value="2" id="rsa2"><label for="rsa2"><span class="likert-num">2</span>Poor</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_school_admin" value="3" id="rsa3"><label for="rsa3"><span class="likert-num">3</span>Neutral</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_school_admin" value="4" id="rsa4"><label for="rsa4"><span class="likert-num">4</span>Good</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_school_admin" value="5" id="rsa5"><label for="rsa5"><span class="likert-num">5</span>Excellent</label></div>
+                                </div>
+                                <div class="likert-anchors"><span>Very Poor</span><span>Excellent</span></div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">District administration (superintendent / district office)</label>
+                                <div class="likert-scale">
+                                    <div class="likert-option"><input type="radio" name="rating_district_admin" value="1" id="rda1"><label for="rda1"><span class="likert-num">1</span>Very Poor</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_district_admin" value="2" id="rda2"><label for="rda2"><span class="likert-num">2</span>Poor</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_district_admin" value="3" id="rda3"><label for="rda3"><span class="likert-num">3</span>Neutral</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_district_admin" value="4" id="rda4"><label for="rda4"><span class="likert-num">4</span>Good</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_district_admin" value="5" id="rda5"><label for="rda5"><span class="likert-num">5</span>Excellent</label></div>
+                                </div>
+                                <div class="likert-anchors"><span>Very Poor</span><span>Excellent</span></div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Curriculum &amp; instructional quality</label>
+                                <div class="likert-scale">
+                                    <div class="likert-option"><input type="radio" name="rating_curriculum" value="1" id="rc1"><label for="rc1"><span class="likert-num">1</span>Very Poor</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_curriculum" value="2" id="rc2"><label for="rc2"><span class="likert-num">2</span>Poor</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_curriculum" value="3" id="rc3"><label for="rc3"><span class="likert-num">3</span>Neutral</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_curriculum" value="4" id="rc4"><label for="rc4"><span class="likert-num">4</span>Good</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_curriculum" value="5" id="rc5"><label for="rc5"><span class="likert-num">5</span>Excellent</label></div>
+                                </div>
+                                <div class="likert-anchors"><span>Very Poor</span><span>Excellent</span></div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Physical facilities &amp; building conditions</label>
+                                <div class="likert-scale">
+                                    <div class="likert-option"><input type="radio" name="rating_facilities" value="1" id="rf1"><label for="rf1"><span class="likert-num">1</span>Very Poor</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_facilities" value="2" id="rf2"><label for="rf2"><span class="likert-num">2</span>Poor</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_facilities" value="3" id="rf3"><label for="rf3"><span class="likert-num">3</span>Neutral</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_facilities" value="4" id="rf4"><label for="rf4"><span class="likert-num">4</span>Good</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_facilities" value="5" id="rf5"><label for="rf5"><span class="likert-num">5</span>Excellent</label></div>
+                                </div>
+                                <div class="likert-anchors"><span>Very Poor</span><span>Excellent</span></div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Conflict resolution &amp; discipline process</label>
+                                <div class="likert-scale">
+                                    <div class="likert-option"><input type="radio" name="rating_conflict" value="1" id="rcr1"><label for="rcr1"><span class="likert-num">1</span>Very Poor</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_conflict" value="2" id="rcr2"><label for="rcr2"><span class="likert-num">2</span>Poor</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_conflict" value="3" id="rcr3"><label for="rcr3"><span class="likert-num">3</span>Neutral</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_conflict" value="4" id="rcr4"><label for="rcr4"><span class="likert-num">4</span>Good</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_conflict" value="5" id="rcr5"><label for="rcr5"><span class="likert-num">5</span>Excellent</label></div>
+                                </div>
+                                <div class="likert-anchors"><span>Very Poor</span><span>Excellent</span></div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Communication from the district (newsletters, meetings, responses to concerns)</label>
+                                <div class="likert-scale">
+                                    <div class="likert-option"><input type="radio" name="rating_communication" value="1" id="rcom1"><label for="rcom1"><span class="likert-num">1</span>Very Poor</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_communication" value="2" id="rcom2"><label for="rcom2"><span class="likert-num">2</span>Poor</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_communication" value="3" id="rcom3"><label for="rcom3"><span class="likert-num">3</span>Neutral</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_communication" value="4" id="rcom4"><label for="rcom4"><span class="likert-num">4</span>Good</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_communication" value="5" id="rcom5"><label for="rcom5"><span class="likert-num">5</span>Excellent</label></div>
+                                </div>
+                                <div class="likert-anchors"><span>Very Poor</span><span>Excellent</span></div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Overall sense of safety &amp; belonging for your child</label>
+                                <div class="likert-scale">
+                                    <div class="likert-option"><input type="radio" name="rating_safety" value="1" id="rsaf1"><label for="rsaf1"><span class="likert-num">1</span>Very Poor</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_safety" value="2" id="rsaf2"><label for="rsaf2"><span class="likert-num">2</span>Poor</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_safety" value="3" id="rsaf3"><label for="rsaf3"><span class="likert-num">3</span>Neutral</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_safety" value="4" id="rsaf4"><label for="rsaf4"><span class="likert-num">4</span>Good</label></div>
+                                    <div class="likert-option"><input type="radio" name="rating_safety" value="5" id="rsaf5"><label for="rsaf5"><span class="likert-num">5</span>Excellent</label></div>
+                                </div>
+                                <div class="likert-anchors"><span>Very Poor</span><span>Excellent</span></div>
+                            </div>
+                        </div>
+
+                        <!-- ══ SECTION 4: BUDGET IMPACT ══════════════════════ -->
+                        <div class="survey-step" data-step="4" hidden>
+                            <div class="survey-section-header">
+                                <h3>Section 4: Budget Impact</h3>
+                                <p>Springfield SD 19 cut 60.7 staff positions over two years. Help us understand how that affected your family.</p>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Were you aware of budget cuts and staff reductions while your child was enrolled?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="aware_budget_cuts" value="yes"><span>Yes, I was aware</span></label>
+                                    <label class="radio-option"><input type="radio" name="aware_budget_cuts" value="somewhat"><span>Somewhat aware</span></label>
+                                    <label class="radio-option"><input type="radio" name="aware_budget_cuts" value="no"><span>No, I wasn't aware</span></label>
+                                </div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Did budget cuts directly affect your child's experience?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="budget_affected_child" value="yes"><span>Yes, significantly</span></label>
+                                    <label class="radio-option"><input type="radio" name="budget_affected_child" value="somewhat"><span>Somewhat</span></label>
+                                    <label class="radio-option"><input type="radio" name="budget_affected_child" value="no"><span>Not that I noticed</span></label>
+                                    <label class="radio-option"><input type="radio" name="budget_affected_child" value="unsure"><span>Unsure</span></label>
+                                </div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Which budget-related impacts did your family experience? <span class="optional">(check all that apply)</span></label>
+                                <div class="checkbox-group-grid">
+                                    <label class="checkbox-card"><input type="checkbox" name="budget_impacts" value="lost_counselor"><span>Lost access to counselor or mental health support</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="budget_impacts" value="lost_ea"><span>Reduced educational assistant / paraeducator support</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="budget_impacts" value="larger_classes"><span>Increased class sizes</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="budget_impacts" value="cut_electives"><span>Eliminated electives or extracurriculars</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="budget_impacts" value="cut_sports"><span>Cut sports or activities</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="budget_impacts" value="cut_sped"><span>Reduced special education services</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="budget_impacts" value="teacher_turnover"><span>High teacher turnover / loss of favorite teachers</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="budget_impacts" value="supplies"><span>Lack of supplies or materials</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="budget_impacts" value="none"><span>None of the above</span></label>
+                                </div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Did budget-related changes influence your decision to leave the district?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="budget_influenced_leaving" value="primary"><span>Yes — it was a primary reason</span></label>
+                                    <label class="radio-option"><input type="radio" name="budget_influenced_leaving" value="contributing"><span>Yes — it was a contributing factor</span></label>
+                                    <label class="radio-option"><input type="radio" name="budget_influenced_leaving" value="no"><span>No — other reasons drove our decision</span></label>
+                                    <label class="radio-option"><input type="radio" name="budget_influenced_leaving" value="unsure"><span>Unsure</span></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ══ SECTION 5: REASONS FOR LEAVING ════════════════ -->
+                        <div class="survey-step" data-step="5" hidden>
+                            <div class="survey-section-header">
+                                <h3>Section 5: Reasons for Leaving</h3>
+                                <p>Select all reasons that contributed to your family's decision to leave Springfield SD 19.</p>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Primary reasons for leaving <span class="optional">(check all that apply)</span></label>
+                                <div class="checkbox-group-grid">
+                                    <label class="checkbox-card"><input type="checkbox" name="reasons_leaving" value="budget_cuts"><span>Budget cuts &amp; staffing reductions</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="reasons_leaving" value="sped_unmet"><span>Unmet special education needs</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="reasons_leaving" value="curriculum"><span>Curriculum concerns</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="reasons_leaving" value="safety_bullying"><span>Safety or bullying concerns</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="reasons_leaving" value="admin_dissatisfaction"><span>Dissatisfaction with administration</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="reasons_leaving" value="teacher_quality"><span>Teacher quality or high turnover</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="reasons_leaving" value="facilities"><span>Facilities or environment</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="reasons_leaving" value="values"><span>Religious or values alignment</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="reasons_leaving" value="moved"><span>Moved out of the district boundary</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="reasons_leaving" value="homeschool_preference"><span>Preference for homeschool or alternative education</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="reasons_leaving" value="class_size"><span>Class sizes too large</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="reasons_leaving" value="lack_support"><span>Child felt unsupported or unheard</span></label>
+                                </div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Any other reasons not listed above?</label>
+                                <textarea name="reasons_other" rows="3" placeholder="Tell us more..."></textarea>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">In your own words: what was the single most important factor in your decision to leave?</label>
+                                <textarea name="primary_reason_detail" rows="4" placeholder="This helps us understand what matters most to families..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- ══ SECTION 6: WHERE DID YOU GO ══════════════════ -->
+                        <div class="survey-step" data-step="6" hidden>
+                            <div class="survey-section-header">
+                                <h3>Section 6: Where Did You Go?</h3>
+                                <p>Help us understand where Springfield families are landing — and what's working better.</p>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">What is your child's current educational setting? <span class="optional">(select primary setting)</span></label>
+                                <select name="current_setting">
+                                    <option value="" disabled selected>Select current setting</option>
+                                    <option value="public_other">Public school — another Oregon district</option>
+                                    <option value="public_charter">Public charter school</option>
+                                    <option value="private_religious">Private school — religious</option>
+                                    <option value="private_secular">Private school — secular</option>
+                                    <option value="homeschool_parent">Homeschool — parent-led</option>
+                                    <option value="homeschool_coop">Homeschool — co-op or hybrid program</option>
+                                    <option value="online_public">Online public school (e.g. Oregon Virtual Academy)</option>
+                                    <option value="online_private">Online private or subscription program</option>
+                                    <option value="graduated">Child has since graduated</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="survey-question" id="other-district-q" style="display:none">
+                                <label class="q-label">Which district or school did you transfer to?</label>
+                                <input type="text" name="current_district_name" placeholder="e.g. Eugene 4J, Bethel, etc.">
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">How satisfied is your family with your child's current educational setting?</label>
+                                <div class="likert-scale">
+                                    <div class="likert-option"><input type="radio" name="current_satisfaction" value="1" id="cs1"><label for="cs1"><span class="likert-num">1</span>Very Unsatisfied</label></div>
+                                    <div class="likert-option"><input type="radio" name="current_satisfaction" value="2" id="cs2"><label for="cs2"><span class="likert-num">2</span>Unsatisfied</label></div>
+                                    <div class="likert-option"><input type="radio" name="current_satisfaction" value="3" id="cs3"><label for="cs3"><span class="likert-num">3</span>Neutral</label></div>
+                                    <div class="likert-option"><input type="radio" name="current_satisfaction" value="4" id="cs4"><label for="cs4"><span class="likert-num">4</span>Satisfied</label></div>
+                                    <div class="likert-option"><input type="radio" name="current_satisfaction" value="5" id="cs5"><label for="cs5"><span class="likert-num">5</span>Very Satisfied</label></div>
+                                </div>
+                                <div class="likert-anchors"><span>Very Unsatisfied</span><span>Very Satisfied</span></div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">What is your child getting now that they were not getting at Springfield SD 19?</label>
+                                <textarea name="what_child_gets_now" rows="4" placeholder="e.g. smaller class sizes, better SPED support, more individualized attention, specific programs..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- ══ SECTION 7: LOOKING FORWARD ════════════════════ -->
+                        <div class="survey-step" data-step="7" hidden>
+                            <div class="survey-section-header">
+                                <h3>Section 7: Looking Forward</h3>
+                                <p>What would it take to bring your family back — and would you support the effort to fix our schools?</p>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">What changes would make you consider returning your child to Springfield SD 19? <span class="optional">(check all that apply)</span></label>
+                                <div class="checkbox-group-grid">
+                                    <label class="checkbox-card"><input type="checkbox" name="return_conditions" value="restore_staff"><span>Restore cut teaching positions</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="return_conditions" value="restore_counselors"><span>Restore counselors &amp; mental health support</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="return_conditions" value="sped_improvement"><span>Improve special education services</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="return_conditions" value="curriculum_change"><span>Curriculum changes</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="return_conditions" value="admin_leadership"><span>New administrative leadership</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="return_conditions" value="smaller_classes"><span>Smaller class sizes</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="return_conditions" value="facilities_upgrade"><span>Improved facilities</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="return_conditions" value="better_communication"><span>Better communication &amp; transparency</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="return_conditions" value="safety_improvements"><span>Safety &amp; anti-bullying improvements</span></label>
+                                    <label class="checkbox-card"><input type="checkbox" name="return_conditions" value="nothing"><span>Nothing — we would not return</span></label>
+                                </div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Any other conditions for returning?</label>
+                                <textarea name="return_conditions_other" rows="3" placeholder="Anything else that would need to change..."></textarea>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">How likely would you be to recommend Springfield SD 19 to another family <em>today</em>?</label>
+                                <div class="likert-scale">
+                                    <div class="likert-option"><input type="radio" name="likelihood_recommend" value="1" id="lr1"><label for="lr1"><span class="likert-num">1</span>Would not recommend</label></div>
+                                    <div class="likert-option"><input type="radio" name="likelihood_recommend" value="2" id="lr2"><label for="lr2"><span class="likert-num">2</span>Unlikely</label></div>
+                                    <div class="likert-option"><input type="radio" name="likelihood_recommend" value="3" id="lr3"><label for="lr3"><span class="likert-num">3</span>Neutral</label></div>
+                                    <div class="likert-option"><input type="radio" name="likelihood_recommend" value="4" id="lr4"><label for="lr4"><span class="likert-num">4</span>Likely</label></div>
+                                    <div class="likert-option"><input type="radio" name="likelihood_recommend" value="5" id="lr5"><label for="lr5"><span class="likert-num">5</span>Would recommend</label></div>
+                                </div>
+                                <div class="likert-anchors"><span>Would Not Recommend</span><span>Would Recommend</span></div>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Springfield Bridge Plan is working to pass a Local Option Levy in November 2026 to restore staffing and programs. Would you support it?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="levy_support" value="yes_vote"><span>Yes — I would vote for it</span></label>
+                                    <label class="radio-option"><input type="radio" name="levy_support" value="yes_lean"><span>Leaning yes, want to learn more</span></label>
+                                    <label class="radio-option"><input type="radio" name="levy_support" value="unsure"><span>Unsure</span></label>
+                                    <label class="radio-option"><input type="radio" name="levy_support" value="no_lean"><span>Leaning no</span></label>
+                                    <label class="radio-option"><input type="radio" name="levy_support" value="no_vote"><span>No — would not support</span></label>
+                                    <label class="radio-option"><input type="radio" name="levy_support" value="not_eligible"><span>Not eligible to vote in this district</span></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ══ SECTION 8: MESSAGE TO THE BOARD ══════════════ -->
+                        <div class="survey-step" data-step="8" hidden>
+                            <div class="survey-section-header">
+                                <h3>Section 8: Message to the Board</h3>
+                                <p>Your last chance to speak directly. These responses will be aggregated and presented to the Springfield SD 19 Board of Directors.</p>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">What is the single most important recommendation you would make to the Board of Directors and district administration?</label>
+                                <textarea name="board_recommendation" rows="5" placeholder="Speak directly to the Board — what do they most need to hear from you?"></textarea>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">Is there anything else you'd like to share about your family's experience or your hopes for Springfield's schools?</label>
+                                <textarea name="additional_comments" rows="4" placeholder="Anything else..."></textarea>
+                            </div>
+
+                            <div class="survey-question">
+                                <label class="q-label">May we share anonymized excerpts from your written responses publicly?</label>
+                                <p class="q-hint">Your name and any identifying details would be removed. Only general context (e.g. "a parent of a former 4th grader") would be kept.</p>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="allow_excerpts" value="yes"><span>Yes — anonymized excerpts may be shared publicly</span></label>
+                                    <label class="radio-option"><input type="radio" name="allow_excerpts" value="no"><span>No — keep my responses private and aggregated only</span></label>
+                                </div>
+                            </div>
+
+                            <div style="margin-top:2rem; padding:1.5rem; background:var(--color-gray-50); border-radius:var(--radius-lg); font-size:var(--text-sm); color:var(--color-gray-600); line-height:1.7;">
+                                <strong>Data use notice:</strong> Your name and email are stored separately and used only to prevent duplicate submissions. Your responses are confidential and will be aggregated into district-level insights presented to the Board of Directors and used to support the Springfield Bridge Plan levy campaign. No individual responses are ever attributed or published.
+                            </div>
+                        </div>
+
+                        <!-- Nav -->
+                        <div class="survey-nav">
+                            <button type="button" class="btn btn-secondary" id="exit-prev" hidden>← Previous</button>
+                            <button type="button" class="btn btn-primary" id="exit-next">Next Section →</button>
+                            <button type="submit" class="btn btn-primary" id="exit-submit" hidden>Submit Survey ✓</button>
+                        </div>
+
+                    </form>
+
+                    <!-- Success -->
+                    <div id="exit-survey-success" hidden style="text-align:center; padding:3rem 1rem;">
+                        <div style="font-size:4rem; margin-bottom:1rem;">🙏</div>
+                        <h2 style="font-size:var(--text-3xl); font-weight:800; color:var(--color-primary-dark); margin-bottom:1rem;">Thank You for Sharing.</h2>
+                        <p style="font-size:var(--text-lg); color:var(--color-gray-600); max-width:560px; margin:0 auto 2rem;">Your experience matters. These responses will be presented directly to the Springfield SD 19 Board of Directors as part of the Springfield Bridge Plan.</p>
+                        <a href="levy.html" class="btn btn-primary btn-large" style="margin-right:1rem">Learn About the Levy</a>
+                        <a href="index.html" class="btn btn-secondary btn-large">Return Home</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg class="logo-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 36h40v4H4zM8 32h4v4H8zM36 32h4v4h-4zM6 28c0-8 8-16 18-16s18 8 18 16H6z" fill="currentColor"/></svg>
+                        <span>Springfield Bridge Plan</span>
+                    </div>
+                    <p class="footer-tagline">Building a bridge, not burning one.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="levy.html">The Levy</a>
+                    <a href="survey.html">Staff Survey</a>
+                    <a href="exit-survey.html">Family Exit Survey</a>
+                    <a href="dashboard.html">Data Dashboard</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Springfield Bridge Plan. A community initiative.</p>
+                <p class="footer-note">Independent community campaign. Not affiliated with Springfield Public Schools.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/site.js"></script>
+    <script src="js/exit-survey.js"></script>
+</body>
+</html>
