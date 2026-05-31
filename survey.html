@@ -77,19 +77,22 @@
                             <div class="survey-question">
                                 <label class="q-label">Your Name <span class="required">*</span></label>
                                 <p class="q-hint">Used only to prevent duplicate submissions. Never published or attributed to your responses.</p>
-                                <input type="text" name="respondent_name" required placeholder="First and last name" autocomplete="name">
+                                <input type="text" name="respondent_name" placeholder="First and last name" autocomplete="name">
+                                <span class="q-error">Please enter your name.</span>
                             </div>
 
                             <div class="survey-question">
                                 <label class="q-label">Your Email Address <span class="required">*</span></label>
                                 <p class="q-hint">Used only to prevent duplicate submissions. Never published, shared, or linked to your answers.</p>
-                                <input type="email" name="respondent_email" required placeholder="you@springfield.k12.or.us" autocomplete="email">
+                                <input type="email" name="respondent_email" placeholder="you@springfield.k12.or.us" autocomplete="email">
+                                <span class="q-error">Please enter a valid email address.</span>
                             </div>
 
                             <div class="survey-question">
                                 <label class="q-label">Q1. What is your primary role in the district?</label>
-                                <select name="q1_role" required>
-                                    <option value="">Select your role</option>
+                                <select name="q1_role">
+                                <option value="" disabled selected>Select your role</option>
+                                    
                                     <option value="licensed_classroom">Licensed — Classroom Teacher</option>
                                     <option value="licensed_specialist">Licensed — Specialist (counselor, SLP, etc.)</option>
                                     <option value="classified_ea">Classified — Educational Assistant</option>
@@ -98,6 +101,7 @@
                                     <option value="former_rif">Former Staff — RIF'd / Laid Off</option>
                                     <option value="other">Other</option>
                                 </select>
+                                <span class="q-error">Please select your role.</span>
                             </div>
 
                             <div class="survey-question">
@@ -150,6 +154,7 @@
                                     <div class="likert-option"><input type="radio" name="q5" value="4" id="q5_4"><label for="q5_4"><span class="likert-num">4</span>Good</label></div>
                                     <div class="likert-option"><input type="radio" name="q5" value="5" id="q5_5"><label for="q5_5"><span class="likert-num">5</span>Excellent</label></div>
                                 </div>
+                                <div class="likert-anchors"><span>Very Poor</span><span>Excellent</span></div>
                             </div>
 
                             <div class="survey-question">
@@ -161,6 +166,7 @@
                                     <div class="likert-option"><input type="radio" name="q6" value="4" id="q6_4"><label for="q6_4"><span class="likert-num">4</span>Agree</label></div>
                                     <div class="likert-option"><input type="radio" name="q6" value="5" id="q6_5"><label for="q6_5"><span class="likert-num">5</span>Strongly Agree</label></div>
                                 </div>
+                                <div class="likert-anchors"><span>Strongly Disagree</span><span>Strongly Agree</span></div>
                             </div>
 
                             <div class="survey-question">
@@ -172,6 +178,7 @@
                                     <div class="likert-option"><input type="radio" name="q7" value="4" id="q7_4"><label for="q7_4"><span class="likert-num">4</span>Agree</label></div>
                                     <div class="likert-option"><input type="radio" name="q7" value="5" id="q7_5"><label for="q7_5"><span class="likert-num">5</span>Strongly Agree</label></div>
                                 </div>
+                                <div class="likert-anchors"><span>Strongly Disagree</span><span>Strongly Agree</span></div>
                             </div>
 
                             <div class="survey-question">
@@ -183,6 +190,7 @@
                                     <div class="likert-option"><input type="radio" name="q8" value="4" id="q8_4"><label for="q8_4"><span class="likert-num">4</span>Agree</label></div>
                                     <div class="likert-option"><input type="radio" name="q8" value="5" id="q8_5"><label for="q8_5"><span class="likert-num">5</span>Strongly Agree</label></div>
                                 </div>
+                                <div class="likert-anchors"><span>Strongly Disagree</span><span>Strongly Agree</span></div>
                             </div>
 
                             <div class="survey-question">
@@ -214,6 +222,7 @@
                                     <div class="likert-option"><input type="radio" name="q10" value="4" id="q10_4"><label for="q10_4"><span class="likert-num">4</span>Agree</label></div>
                                     <div class="likert-option"><input type="radio" name="q10" value="5" id="q10_5"><label for="q10_5"><span class="likert-num">5</span>Strongly Agree</label></div>
                                 </div>
+                                <div class="likert-anchors"><span>Strongly Disagree</span><span>Strongly Agree</span></div>
                             </div>
 
                             <div class="survey-question">
@@ -225,6 +234,7 @@
                                     <div class="likert-option"><input type="radio" name="q11" value="4" id="q11_4"><label for="q11_4"><span class="likert-num">4</span>Agree</label></div>
                                     <div class="likert-option"><input type="radio" name="q11" value="5" id="q11_5"><label for="q11_5"><span class="likert-num">5</span>Strongly Agree</label></div>
                                 </div>
+                                <div class="likert-anchors"><span>Strongly Disagree</span><span>Strongly Agree</span></div>
                             </div>
 
                             <div class="survey-question">
@@ -236,6 +246,7 @@
                                     <div class="likert-option"><input type="radio" name="q12" value="4" id="q12_4"><label for="q12_4"><span class="likert-num">4</span>Agree</label></div>
                                     <div class="likert-option"><input type="radio" name="q12" value="5" id="q12_5"><label for="q12_5"><span class="likert-num">5</span>Strongly Agree</label></div>
                                 </div>
+                                <div class="likert-anchors"><span>Strongly Disagree</span><span>Strongly Agree</span></div>
                             </div>
                         </div>
 
@@ -255,6 +266,7 @@
                                     <div class="likert-option"><input type="radio" name="q13" value="4" id="q13_4"><label for="q13_4"><span class="likert-num">4</span>High</label></div>
                                     <div class="likert-option"><input type="radio" name="q13" value="5" id="q13_5"><label for="q13_5"><span class="likert-num">5</span>Very High</label></div>
                                 </div>
+                                <div class="likert-anchors"><span>Very Low</span><span>Very High</span></div>
                             </div>
 
                             <div class="survey-question">
@@ -266,6 +278,7 @@
                                     <div class="likert-option"><input type="radio" name="q14" value="4" id="q14_4"><label for="q14_4"><span class="likert-num">4</span>Agree</label></div>
                                     <div class="likert-option"><input type="radio" name="q14" value="5" id="q14_5"><label for="q14_5"><span class="likert-num">5</span>Strongly Agree</label></div>
                                 </div>
+                                <div class="likert-anchors"><span>Strongly Disagree</span><span>Strongly Agree</span></div>
                             </div>
 
                             <div class="survey-question">
@@ -277,6 +290,7 @@
                                     <div class="likert-option"><input type="radio" name="q15" value="4" id="q15_4"><label for="q15_4"><span class="likert-num">4</span>Agree</label></div>
                                     <div class="likert-option"><input type="radio" name="q15" value="5" id="q15_5"><label for="q15_5"><span class="likert-num">5</span>Strongly Agree</label></div>
                                 </div>
+                                <div class="likert-anchors"><span>Strongly Disagree</span><span>Strongly Agree</span></div>
                             </div>
 
                             <div class="survey-question">
@@ -288,6 +302,7 @@
                                     <div class="likert-option"><input type="radio" name="q16" value="4" id="q16_4"><label for="q16_4"><span class="likert-num">4</span>Agree</label></div>
                                     <div class="likert-option"><input type="radio" name="q16" value="5" id="q16_5"><label for="q16_5"><span class="likert-num">5</span>Strongly Agree</label></div>
                                 </div>
+                                <div class="likert-anchors"><span>Strongly Disagree</span><span>Strongly Agree</span></div>
                             </div>
                         </div>
 
@@ -318,6 +333,7 @@
                                     <div class="likert-option"><input type="radio" name="q18" value="4" id="q18_4"><label for="q18_4"><span class="likert-num">4</span>Agree</label></div>
                                     <div class="likert-option"><input type="radio" name="q18" value="5" id="q18_5"><label for="q18_5"><span class="likert-num">5</span>Strongly Agree</label></div>
                                 </div>
+                                <div class="likert-anchors"><span>Strongly Disagree</span><span>Strongly Agree</span></div>
                             </div>
 
                             <div class="survey-question">
