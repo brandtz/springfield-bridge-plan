@@ -58,14 +58,7 @@
                     </div>
 
                     <!-- Survey progress -->
-                    <div class="survey-progress">
-                        <div class="survey-progress-bar">
-                            <div class="survey-progress-fill" id="survey-progress-fill" style="width:0%"></div>
-                        </div>
-                        <div class="survey-progress-text" id="survey-progress-text">Section 1 of 6</div>
-                    </div>
-
-                    <!-- Survey form -->
+<!-- Survey form -->
                     <form id="survey-form" novalidate>
 
                         <!-- SECTION 1: WHO YOU ARE -->
@@ -140,7 +133,7 @@
                         </div>
 
                         <!-- SECTION 2: CLASSROOM CONDITIONS -->
-                        <div class="survey-step" data-step="2" hidden>
+                        <div class="survey-step" data-step="2">
                             <div class="survey-section-header">
                                 <h3>Section 2: Classroom Conditions</h3>
                                 <p>Rate from 1 (very poor/strongly disagree) to 5 (excellent/strongly agree).</p>
@@ -208,7 +201,7 @@
                         </div>
 
                         <!-- SECTION 3: STUDENT SUPPORT -->
-                        <div class="survey-step" data-step="3" hidden>
+                        <div class="survey-step" data-step="3">
                             <div class="survey-section-header">
                                 <h3>Section 3: Student Support</h3>
                                 <p>Rate from 1 (strongly disagree) to 5 (strongly agree).</p>
@@ -252,7 +245,7 @@
                         </div>
 
                         <!-- SECTION 4: MORALE & WELLBEING -->
-                        <div class="survey-step" data-step="4" hidden>
+                        <div class="survey-step" data-step="4">
                             <div class="survey-section-header">
                                 <h3>Section 4: Morale &amp; Wellbeing</h3>
                                 <p>Rate from 1 (strongly disagree / very negative) to 5 (strongly agree / very positive).</p>
@@ -308,7 +301,7 @@
                         </div>
 
                         <!-- SECTION 5: BUDGET IMPACT -->
-                        <div class="survey-step" data-step="5" hidden>
+                        <div class="survey-step" data-step="5">
                             <div class="survey-section-header">
                                 <h3>Section 5: Budget Impact</h3>
                                 <p>Help us quantify the real dollar impact on your work.</p>
@@ -360,7 +353,7 @@
                         </div>
 
                         <!-- SECTION 6: OPEN RESPONSE -->
-                        <div class="survey-step" data-step="6" hidden>
+                        <div class="survey-step" data-step="6">
                             <div class="survey-section-header">
                                 <h3>Section 6: Your Voice</h3>
                                 <p>Optional open responses. Nothing you write here can identify you.</p>
@@ -386,11 +379,9 @@
                             </div>
                         </div>
 
-                        <!-- Navigation -->
-                        <div class="survey-nav">
-                            <button type="button" class="btn btn-secondary" id="survey-prev" hidden>← Previous</button>
-                            <button type="button" class="btn btn-primary" id="survey-next">Next Section →</button>
-                            <button type="submit" class="btn btn-primary" id="survey-submit" hidden>Submit Survey ✓</button>
+                        <!-- Submit -->
+                        <div class="survey-nav" style="justify-content:flex-end; margin-top:2.5rem;">
+                            <button type="submit" class="btn btn-primary btn-large" id="survey-submit">Submit Survey ✓</button>
                         </div>
 
                     </form>
